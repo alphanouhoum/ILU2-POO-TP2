@@ -11,7 +11,6 @@ public class ControlAfficherMarche {
 
 	//TODO a completer
 	public String[] donnerInfosMarche() {
-		String[] infosMarche = village.donnerEtatMarche();
-		return infosMarche;
+		return village.donnerEtatMarche();
 	}
 }

@@ -30,6 +30,9 @@ public class ControlLibererEtal {
 		//TODO a completer
 		String[] donneesEtal = null;
 		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
+		if (etal==null) {
+			return null;
+		}
 		donneesEtal = etal.etatEtal();
 		return donneesEtal;
 	}
