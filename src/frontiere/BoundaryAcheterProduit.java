@@ -26,8 +26,8 @@ public class BoundaryAcheterProduit {
 			int choixUtilisateur = -1;
 			do {
 				System.out.println("Chez quel commerçant voulez-vous acheter des fleurs ?");
-				for (Gaulois gaulois : vendeurs) {
-					System.out.println("- "+ gaulois.getNom());
+				for (int i =0; i<vendeurs.length; i++) {
+					System.out.println(i + " - "+ vendeurs[i].getNom());
 				}
 				choixUtilisateur = Clavier.entrerEntier("");
 				if(choixUtilisateur > vendeurs.length || choixUtilisateur==0) {
