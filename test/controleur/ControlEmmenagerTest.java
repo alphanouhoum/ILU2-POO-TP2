@@ -10,35 +10,47 @@ import villagegaulois.Village;
 
 class ControlEmmenagerTest {
 	private Village village;
-	private Chef alpha;
+	private Chef abraracourcix;
 	
 	@BeforeEach
 	public void initialiserSituation() {
 		System.out.println("Initialisation...");
 		village = new Village("le village de alpha", 10, 5);
-		alpha = new Chef("Alpha", 10, village);
-		village.setChef(alpha);
+		abraracourcix = new Chef("Abraracourcix", 10, village);
+		village.setChef(abraracourcix);
 	}
 	
 	@Test
 	void testControlEmmenager() {
-		
-		fail("Not yet implemented");
+		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
+		assertNotNull(controlEmmenager, "Constructeur ne renvoie pas null");
 	}
 
 	@Test
 	void testIsHabitant() {
-		fail("Not yet implemented");
+		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
+		controlEmmenager.ajouterGaulois("Bonemine", 3);
+		assertTrue(controlEmmenager.isHabitant("Bonemine"));
+		assertFalse(controlEmmenager.isHabitant("N'existe pas"));
+		controlEmmenager.ajouterDruide("Panoramix", 3, 10, 5);
+		assertTrue(controlEmmenager.isHabitant("Panoramix"));
 	}
 
 	@Test
 	void testAjouterDruide() {
-		fail("Not yet implemented");
+		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
+		controlEmmenager.ajouterDruide("Panoramix", 3, 10, 5);
+		assertTrue(controlEmmenager.isHabitant("Panoramix"));
+		
 	}
 
 	@Test
 	void testAjouterGaulois() {
-		fail("Not yet implemented");
+		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
+		controlEmmenager.ajouterGaulois("Bonemine", 3);
+		assertTrue(controlEmmenager.isHabitant("Bonemine"));
+		assertFalse(controlEmmenager.isHabitant("N'est pas habitant"));
+		
 	}
 
 }
